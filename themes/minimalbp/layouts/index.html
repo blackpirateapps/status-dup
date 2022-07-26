@@ -10,7 +10,7 @@
             <div class="status-all">
             <p>
                 <div class="time">
-                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan 2006" }} | <span class="timeam">{{ .Date | time.Format ":time_short" }}</span> </time>
+                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan 2006" }} | <span class="timeam">{{ dateFormat "15:04 MST" .Date.Local }}</span> </time>
                 </div>
                 {{ .Content }}
 
