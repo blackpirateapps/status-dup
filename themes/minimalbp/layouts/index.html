@@ -10,13 +10,19 @@
             <div class="status-all">
             <p>
                 <div class="time">
-                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006 Jan 02" }}</time>
+                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan 2006" }} | <span class="timeam">{{ .Date | time.Format ":time_short" }}</span> </time>
                 </div>
                 {{ .Content }}
+
+                {{ if isset .Params "tags" }}
+                
                 Mood:
                 {{ range (.GetTerms "tags") }}
                     <span>
-                        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>,</span>
+                        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+                        
+                    </span>
+                {{ end }}
                 {{ end }}
             </p>
         </div>
