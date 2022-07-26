@@ -79,7 +79,8 @@ a {
     text-decoration: none;
     padding: 0.25rem;
 }
-a:hover {
+a:hover,
+.footer > p > a:hover {
     background-color: var(--accent);
     color: white;
     padding: 0.25rem;
@@ -100,7 +101,7 @@ a:hover {
 }
 .nav-item > a:hover {
     background-color: white;
-    color: var(--accent);
+    color: black;
 }
 @media (min-width: 600px) {
     .nav-bar {
@@ -108,8 +109,6 @@ a:hover {
     }
 }
 
-#footer-link {
-    color: red !important;
 }
 blockquote {
     border: solid 4px rgb(219, 217, 217);

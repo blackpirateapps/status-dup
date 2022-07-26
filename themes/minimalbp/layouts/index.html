@@ -6,7 +6,7 @@
         <div class="posts">
             <p class="author">Thank you for visiting :)</p>
 
-            {{- range.RegularPages }}
+            {{ range (.Paginator 100).Pages }}
             <div class="status-all">
             <p>
                 <div class="time">
@@ -23,6 +23,16 @@
         <br>
         {{ end -}}
     </div>
+    {{ if .Paginator.HasPrev }}
+    <a class="btn btn-default" href="{{ .Paginator.Prev.URL }}">
+        < Newer Statuses
+    </a>
+{{ end }}
+{{ if .Paginator.HasNext }}
+    <a class="btn btn-default" href="{{ .Paginator.Next.URL }}">
+        Older Statuses >
+    </a>
+{{ end }}
     {{- partial "footer.html" . -}}
 </div>
 
