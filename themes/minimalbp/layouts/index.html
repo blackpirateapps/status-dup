@@ -10,7 +10,7 @@
             <div class="status-all">
             <p>
                 <div class="time">
-                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan 2006" }} | <span class="timeam">{{ dateFormat "15:04 MST" .Date.Local }}</span> </time>
+                    <span class="relativetime" datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}" title="{{ dateFormat "January 2, 2006" .Date }}">{{ .Date.Format "02 Jan 2006" }}</span>
                 </div>
                 {{ .Content }}
 
@@ -19,8 +19,7 @@
                 Mood:
                 {{ range (.GetTerms "tags") }}
                     <span>
-                        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-                        
+                        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>|
                     </span>
                 {{ end }}
                 {{ end }}
@@ -41,5 +40,4 @@
 {{ end }}
     {{- partial "footer.html" . -}}
 </div>
-
 <body></html>
