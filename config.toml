@@ -1,0 +1,15 @@
+baseURL = 'https://status.blackpiratex.com/'
+languageCode = 'en-us'
+title = 'Status By BlackPirateX'
+theme = 'minimalbp'
+
+
+[params]
+  author = 'BlackPirateX'
+  description = "Quick one liner thoughts"
+  tags = 'tags'
+  catagories = 'catagories'
+[imaging]
+  anchor = 'Smart'
+  quality = 25
+  resampleFilter = 'Box'

@@ -1,0 +1,29 @@
+{{- partial "head.html" . -}}
+<body>
+    {{- partial "header.html" . -}}
+    <div class="all-content">
+        <h4 class="description">{{ .Site.Params.description }}</h4>
+        <div class="posts">
+            <p class="author">Thank you for visiting :)</p>
+
+            {{- range.RegularPages }}
+            <div class="status-all">
+            <p>
+                <div class="time">
+                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006 Jan 02" }}</time>
+                </div>
+                {{ .Content }}
+                Mood:
+                {{ range (.GetTerms "tags") }}
+                    <span>
+                        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>,</span>
+                {{ end }}
+            </p>
+        </div>
+        <br>
+        {{ end -}}
+    </div>
+    {{- partial "footer.html" . -}}
+</div>
+
+<body></html>
