@@ -195,8 +195,12 @@ pre {
     content: "\f02c";
 }
 .nav-home > a::before {
+    font: var(--fa-font-solid);
     content: "\f015";
     margin-right: 0.25rem;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
 }
 .nav-main-website > a::before {
     content: "\f0ac";
