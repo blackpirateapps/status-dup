@@ -164,8 +164,8 @@ pre {
     background-color: var(--accent-black-bg);
     color: black;
     padding-left: 1rem;
-    padding-top: 0.15rem;
-    padding-bottom: 0.15rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
     max-width: 200px;
     border-radius: 16px;
     margin: 0;
