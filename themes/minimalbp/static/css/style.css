@@ -4,6 +4,7 @@
     --accent-black-bg: rgb(10,132, 255);
     --code-background-color: #272822;
     --green: rgb(4,222,113);
+    --yellow: rgb(255,214,10);
     --bg-ios-darkest: #1c1c1e;
 }
 body {
@@ -76,7 +77,7 @@ h6 {
     margin-bottom: 1rem;
 }
 a {
-    color: var(--accent);
+    color: var(--accent-black-bg);
     text-decoration: none;
     padding: 0.25rem;
 }
@@ -160,16 +161,17 @@ pre {
     margin: 0;
 }
 .time {
-    background-color: var(--accent);
+    background-color: var(--accent-black-bg);
     color: black;
     padding-left: 1rem;
     padding-top: 0.15rem;
     padding-bottom: 0.15rem;
     max-width: 200px;
-    border: solid 1px black;
     border-radius: 16px;
     margin: 0;
+    font-size: 1rem;
 }
+
 .status-all {
     padding: 0.15rem 1rem;
     margin: 0;
@@ -179,4 +181,32 @@ pre {
 }
 .timeam {
     font-size: 1rem;
+}
+.timeam::before {
+    content: "\f017";
+    margin-right: 0.25rem;
+}
+.date-only::before {
+    content: "\f133";
+    margin-right: 0.25rem;
+    font-size: 1rem;
+}
+.mood::before {
+    content: "\f02c";
+}
+.nav-home > a::before {
+    content: "\f015";
+    margin-right: 0.25rem;
+}
+.nav-main-website > a::before {
+    content: "\f0ac";
+    margin-right: 0.25rem;
+}
+.nav-rss > a::before {
+    content: "\f09e";
+    margin-right: 0.25rem;
+}
+.nav-blog > a::before {
+    content: "\f044";
+    margin-right: 0.25rem;
 }
