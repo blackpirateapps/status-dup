@@ -10,7 +10,7 @@
             <div class="status-all">
             <p>
                 <div class="time">
-                    <span class="relativetime" datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}" title="{{ dateFormat "January 2, 2006" .Date }}">{{ .Date.Format "02 Jan 2006" }}</span>
+                    <span class="relativetime" datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}" title="{{ dateFormat "January 2, 2006" .Date }}">{{ .Date.Format "02 Jan 2006" }}|<span class="timeam">{{ .Date.Format "15:04 IST" }}</span></span>
                 </div>
                 {{ .Content }}
 
