@@ -182,35 +182,40 @@ pre {
 .timeam {
     font-size: 1rem;
 }
+.nav-blog > a::before,
+.timeam::before,
+.date-only::before,
+.mood::before,
+.nav-home > a::before,
+.nav-main-website > a::before,
+.nav-rss > a::before {
+    margin-right: 0.25rem;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+}
+
 .timeam::before {
     content: "\f017";
-    margin-right: 0.25rem;
 }
 .date-only::before {
     content: "\f133";
-    margin-right: 0.25rem;
-    font-size: 1rem;
 }
 .mood::before {
     content: "\f02c";
 }
 .nav-home > a::before {
-    font: var(--fa-font-solid);
     content: "\f015";
-    margin-right: 0.25rem;
-    display: inline-block;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
 }
 .nav-main-website > a::before {
     content: "\f0ac";
-    margin-right: 0.25rem;
+
 }
 .nav-rss > a::before {
     content: "\f09e";
-    margin-right: 0.25rem;
+
 }
 .nav-blog > a::before {
     content: "\f044";
-    margin-right: 0.25rem;
 }
