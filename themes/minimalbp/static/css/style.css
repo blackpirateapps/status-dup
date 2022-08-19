@@ -13,7 +13,7 @@ body {
     color: white;
     background-color: black;
     padding: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: monospace;
 }
 
 .main-heading {
@@ -90,6 +90,7 @@ a:hover,
 }
 .nav-bar {
     display: flex;
+    font-family: sans-serif;
     background-color: var(--bg-ios-darkest);
     justify-content: center;
     gap: 1rem;
@@ -163,10 +164,13 @@ pre {
 .time {
     background-color: var(--accent-black-bg);
     color: black;
+    font-family: sans-serif;
     padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    max-width: 200px;
+    min-width: fit-content;
+    max-width: 100px;
     border-radius: 16px;
     margin: 0;
     font-size: 1rem;
