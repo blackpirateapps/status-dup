@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "sf-ui-text-regular";
+    src: url("/fonts/SFUIText-Regular.otf");
+  }
+  
+
 :root {
     --accent: rgb(0,122,255);
     --tob-bg: rgb(142,142,147);
@@ -15,7 +21,9 @@ body {
     padding: 0;
     font-family: monospace;
 }
-
+p {
+    font-family: "sf-ui-text-regular", sans-serif;
+}
 .main-heading {
     text-align: center;
     padding: 1rem;
@@ -164,7 +172,7 @@ pre {
 .time {
     background-color: var(--accent-black-bg);
     color: black;
-    font-family: sans-serif;
+    font-family: monospace;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.25rem;
