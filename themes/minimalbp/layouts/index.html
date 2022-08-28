@@ -19,7 +19,7 @@
                 <span class="mood"></span>
                 {{ range (.GetTerms "tags") }}
                     <span>
-                        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
+                        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
                 {{ end }}
                 {{ end }}
             </p>
