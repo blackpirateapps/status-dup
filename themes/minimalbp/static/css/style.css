@@ -297,6 +297,10 @@ a[href^="https:"]::after {
 a[href^="https:"]::after {
     content: "\f08e";
     font-size: 0.75rem;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
 }
 .nav-item > a::after {
     content: none;
