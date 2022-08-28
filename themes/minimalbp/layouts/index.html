@@ -4,9 +4,9 @@
     <div class="all-content">
         <h4 class="description">{{ .Site.Params.description }}</h4>
         <div class="posts">
-            <p class="author">Thank you for visiting :)</p>
+            <p class="author"><a href="/index.xml" class="rss-icon">Subscribe via RSS</a></p>
 
-            {{ range (.Paginator 100).Pages }}
+            {{ range (.Paginator 50).Pages }}
             <div class="status-all">
             <p>
                 <div class="time">
@@ -28,14 +28,12 @@
         {{ end -}}
     </div>
     {{ if .Paginator.HasPrev }}
-    <a class="btn btn-default" href="{{ .Paginator.Prev.URL }}">
-        < Newer Statuses
+    <a class="btn btn-default newer-statuses" href="{{ .Paginator.Prev.URL }}">
+        Newer Statuses
     </a>
 {{ end }}
 {{ if .Paginator.HasNext }}
-    <a class="btn btn-default" href="{{ .Paginator.Next.URL }}">
-        Older Statuses >
-    </a>
+    <a class="btn btn-default older-statuses" href="{{ .Paginator.Next.URL }}">Older Statuses</a>
 {{ end }}
     {{- partial "footer.html" . -}}
 </div>

@@ -6,7 +6,7 @@ theme = 'minimalbp'
 
 [params]
   author = 'BlackPirateX'
-  description = "Quick one liner thoughts"
+  description = "Quick one liner thoughts, that comes to my mind."
   tags = 'tags'
   catagories = 'catagories'
 [imaging]
