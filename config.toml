@@ -16,9 +16,3 @@ theme = 'minimalbp'
   tags = 'tags'
   catagories = 'catagories'
 
-
-[imaging]
-  anchor = 'Smart'
-  quality = 25
-  resampleFilter = 'Box'
-  
