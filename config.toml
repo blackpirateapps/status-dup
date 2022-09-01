@@ -4,6 +4,12 @@ title = 'Status By BlackPirateX'
 theme = 'minimalbp'
 
 
+[imaging]
+  anchor = 'Smart'
+  quality = 25
+  resampleFilter = 'Box'
+  
+
 [params]
   author = 'BlackPirateX'
   description = "Quick one liner thoughts, that comes to my mind."
