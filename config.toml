@@ -4,12 +4,15 @@ title = 'Status By BlackPirateX'
 theme = 'minimalbp'
 
 
-[params]
-  author = 'BlackPirateX'
-  description = "Quick one liner thoughts"
-  tags = 'tags'
-  catagories = 'catagories'
 [imaging]
   anchor = 'Smart'
   quality = 25
   resampleFilter = 'Box'
+  
+
+[params]
+  author = 'BlackPirateX'
+  description = "Quick one liner thoughts, that comes to my mind."
+  tags = 'tags'
+  catagories = 'catagories'
+
