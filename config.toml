@@ -8,8 +8,14 @@ theme = 'minimalbp'
   anchor = 'Smart'
   bgColor = '#ffffff'
   hint = 'photo'
-  quality = 75
+  quality = 10
   resampleFilter = 'Box'
+
+  [imaging.exif]
+    disableDate = true
+    disableLatLong = true
+    excludeFields = ''
+    includeFields = ''
 
 
 [params]
