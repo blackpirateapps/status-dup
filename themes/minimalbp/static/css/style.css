@@ -316,7 +316,27 @@ a[href^="https:"]::after {
     flex-wrap: wrap;
 }
 .tags-container-w-heading {
-    border: 2px solid var(--accent);
     border-radius: 16px;
-    padding: 1rem;
 }
+.older-statuses {
+    text-align: right;
+}
+.new-old-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.sort-by-tags{
+    margin-bottom: 0.5rem;
+}
+
+.sort-by-tags::after,
+.sort-by-tags::before {
+    content: "\f005";
+    margin: 0.15rem;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+
+}
+

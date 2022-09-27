@@ -5,22 +5,15 @@
         <h4 class="description">{{ .Site.Params.description }}</h4>
         <div class="posts">
             <p class="author"><a href="/index.xml" class="rss-icon">Subscribe via RSS</a></p>
-<div class="tags-container-w-heading">
-<h4 class="description">Sort By Tags</h4>
-
-<div class="tags-container">
-    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count  }}
-{{ with $.Site.GetPage (printf "/tags/%s" $name)  }}
-    <div class="tagbutton">
-    <a href={{ .RelPermalink  }} title="All pages with tag <i>{{$name}}</i>">{{$name}}</a>
-    <sup>({{$cnt}})</sup>
-   </div>
-{{end}}
-{{end}}
-</div>
+<div class="new-old-buttons">
+    {{ if .Paginator.HasPrev }}
+    <a class="btn btn-default newer-statuses" href="{{ .Paginator.Prev.URL }}">
+        Newer Statuses
+    </a>
+{{ end }}
 </div>
 <br>
-            {{ range (.Paginator 50).Pages }}
+            {{ range (.Paginator 20).Pages }}
             <div class="status-all">
             <p>
                 <div class="time">
@@ -41,6 +34,7 @@
         <br>
         {{ end -}}
     </div>
+<div class="new-old-buttons">
     {{ if .Paginator.HasPrev }}
     <a class="btn btn-default newer-statuses" href="{{ .Paginator.Prev.URL }}">
         Newer Statuses
@@ -49,6 +43,22 @@
 {{ if .Paginator.HasNext }}
     <a class="btn btn-default older-statuses" href="{{ .Paginator.Next.URL }}">Older Statuses</a>
 {{ end }}
+</div>
+<br>
+<div class="tags-container-w-heading">
+<h4 class="description sort-by-tags">Sort By Tags</h4>
+
+<div class="tags-container">
+    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count  }}
+{{ with $.Site.GetPage (printf "/tags/%s" $name)  }}
+    <div class="tagbutton">
+    <a href={{ .RelPermalink  }} title="All pages with tag <i>{{$name}}</i>">{{$name}}</a>
+    <sup>({{$cnt}})</sup>
+   </div>
+{{end}}
+{{end}}
+</div>
+</div>
     {{- partial "footer.html" . -}}
 </div>
 <body></html>
