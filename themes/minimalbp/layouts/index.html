@@ -5,7 +5,21 @@
         <h4 class="description">{{ .Site.Params.description }}</h4>
         <div class="posts">
             <p class="author"><a href="/index.xml" class="rss-icon">Subscribe via RSS</a></p>
+<div class="tags-container-w-heading">
+<h4 class="description">Sort By Tags</h4>
 
+<div class="tags-container">
+    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count  }}
+{{ with $.Site.GetPage (printf "/tags/%s" $name)  }}
+    <div class="tagbutton">
+    <a href={{ .RelPermalink  }} title="All pages with tag <i>{{$name}}</i>">{{$name}}</a>
+    <sup>({{$cnt}})</sup>
+   </div>
+{{end}}
+{{end}}
+</div>
+</div>
+<br>
             {{ range (.Paginator 50).Pages }}
             <div class="status-all">
             <p>
