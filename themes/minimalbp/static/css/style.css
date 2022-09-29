@@ -351,3 +351,7 @@ a[href^="https:"]::after {
     padding: 0.25rem;
     border-radius: 50%;
 }
+.learn-how  {
+    text-align: center;
+    font-family: "sf-ui-text-regular";
+}
