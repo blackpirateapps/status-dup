@@ -1,0 +1,5 @@
+{{ $image := resources.GetMatch (.Get "src") }}
+{{ $img := $image.Resize "600x webp" }}
+<a href="{{ $image.RelPermalink }}" id="img-link">
+    <img src="{{ $img.RelPermalink }}">
+</a>

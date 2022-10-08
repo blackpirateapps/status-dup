@@ -355,3 +355,7 @@ a[href^="https:"]::after {
     text-align: center;
     font-family: "sf-ui-text-regular";
 }
+#img-link:hover {
+    text-decoration: none;
+    background-color: inherit;
+}
