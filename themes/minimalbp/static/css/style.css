@@ -39,7 +39,7 @@ body {
     color: white;
     background-color: black;
     padding: 0;
-    font-display: swap;
+    font-display: optional;
     font-family: "sf-ui-text-regular", sans-serif;
 }
 p {
