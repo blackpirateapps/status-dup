@@ -118,6 +118,7 @@ a:hover,
     background-color: var(--accent);
     color: var(--bg-ios-darkest);
     padding: 0.25rem;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
     border-radius: 4px;
 }
 .nav-bar {
@@ -358,4 +359,26 @@ a[href^="https:"]::after {
 #img-link:hover {
     text-decoration: none;
     background-color: inherit;
+}
+.view-original-div {
+    margin: auto;
+    width: fit-content;
+}
+.view-original-link {
+    text-align: center;
+    margin: auto;
+    color: var(--accent);
+    font-size: 0.85rem;
+}
+.view-original-link:hover {
+    padding: 0.65rem;
+    transition: padding 300ms;
+}
+.view-original-link::after {
+    content: "\f105";
+    margin: 0.15rem;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
 }
