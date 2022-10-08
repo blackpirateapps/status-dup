@@ -1,7 +1,6 @@
 ---
 title: "Test"
 date: 2022-10-08T07:15:36+05:30
-tags: []
 
 ---
 This is a test, please ignore.
