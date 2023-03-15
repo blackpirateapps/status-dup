@@ -9,6 +9,13 @@
 <p class="author"><a href="/index.xml" class="rss-icon">Subscribe via RSS</a></p>
 
 <br>
+<h4 class="description choose-theme-text">Choose one of the accent color</h4>
+        <div class="theme-buttons">
+            <button onclick="myfunctionPurple()" class="theme-btn btn-purple"></button>
+        <button onclick="myfunctionGreen()" class="theme-btn btn-green"></button>
+        <button onclick="myfunctionRed()" class="theme-btn btn-red"></button>
+        <button onclick="myfunctionWhite()" class="theme-btn btn-white"></button>
+    </div>
             {{ range (.Paginator 20).Pages }}
             <div class="status-all">
             <p>

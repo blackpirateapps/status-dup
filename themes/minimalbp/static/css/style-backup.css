@@ -5,7 +5,7 @@
   
 
 :root {
-    --accent: #869bfb;
+    --accent: rgb(50,215,75);
     --tob-bg: rgb(142,142,147);
     --accent-black-bg: rgb(50,215,75);
     --code-background-color: #272822;
@@ -382,28 +382,4 @@ a[href^="https:"]::after {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
-}
-.theme-buttons {
-    padding: 1rem;
-    gap: 1rem;
-    display: flex;
-    justify-content: center;
-}
-.theme-btn {
-    height: 2.5rem;
-    border-radius: 50%;
-    width: 2.5rem;
-    border: none;
-}
-.btn-green {
-    background-color: rgb(50,215,75);
-}
-.btn-red {
-    background-color: rgb(255,69,58);
-}
-.btn-purple {
-    background-color: #869bfb;
-}
-.choose-theme-text {
-    color: rgb(199, 197, 197);
 }
