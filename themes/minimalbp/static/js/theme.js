@@ -21,7 +21,16 @@ let r = document.querySelector(':root');
         let chosenTheme = rs.getPropertyValue('--accent');
         createCookie('savedtheme', chosenTheme, 7);
     }
-
+    function myfunctionCyan() {
+        r.style.setProperty('--accent', 'rgb(100,210,255)');
+        let chosenTheme = rs.getPropertyValue('--accent');
+        createCookie('savedtheme', chosenTheme, 7);
+    }
+    function myfunctionYellow() {
+        r.style.setProperty('--accent', 'rgb(255,214,10)');
+        let chosenTheme = rs.getPropertyValue('--accent');
+        createCookie('savedtheme', chosenTheme, 7);
+    }
 
     function createCookie(name,value,days) {
 	if (days) {

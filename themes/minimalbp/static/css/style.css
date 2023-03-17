@@ -404,6 +404,12 @@ a[href^="https:"]::after {
 .btn-purple {
     background-color: #869bfb;
 }
+.btn-cyan {
+    background-color: rgb(100,210,255);
+}
+.btn-yellow {
+    background-color: rgb(255,214,10);
+}
 .choose-theme-text {
     color: rgb(199, 197, 197);
 }
