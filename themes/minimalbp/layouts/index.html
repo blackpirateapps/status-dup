@@ -9,7 +9,7 @@
 <p class="author"><a href="/index.xml" class="rss-icon">Subscribe via RSS</a></p>
 
 <br>
-<h4 class="description choose-theme-text">Choose one of the accent color</h4>
+<h4 class="description choose-theme-text" id="accent-clr">Choose one of the accent color</h4>
         <div class="theme-buttons">
             <button onclick="myfunctionPurple()" class="theme-btn btn-purple"></button>
         <button onclick="myfunctionGreen()" class="theme-btn btn-green"></button>
@@ -23,15 +23,14 @@
                     <span class="relativetime" datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}" title="{{ dateFormat "January 2, 2006" .Date }}"><span class="date-only">{{ .Date.Format "02 Jan 2006" }}</span> | <span class="timeam">{{ .Date.Format "15:04" }}</span></span>
                 </div>
                 {{ .Content }}
-
                 {{ if isset .Params "tags" }}
-                
-                <span class="mood"></span>
+                <p><span class="mood"></span>
                 {{ range (.GetTerms "tags") }}
                     <span>
-                        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
+                        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span></p>
                 {{ end }}
                 {{ end }}
+                <p id="last-updated2">Updated on <span datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}">{{ .Lastmod.Format "02 Jan 2006 at 15:04" }}</span></p>
             </p>
         </div>
         <br>

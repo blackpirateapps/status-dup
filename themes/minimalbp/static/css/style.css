@@ -407,3 +407,8 @@ a[href^="https:"]::after {
 .choose-theme-text {
     color: rgb(199, 197, 197);
 }
+#last-updated2 {
+    font-size: 0.7rem; 
+    text-align: right;
+    font-family: sans-serif; 
+}
