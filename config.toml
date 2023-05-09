@@ -23,3 +23,13 @@ theme = 'minimalbp'
   description = "Quick one liner thoughts, that comes to my mind."
   tags = 'tags'
   catagories = 'catagories'
+
+
+[outputFormats.SearchIndex]
+mediaType = "application/json"
+baseName = "searchindex"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = [ "HTML", "RSS", "SearchIndex" ]
