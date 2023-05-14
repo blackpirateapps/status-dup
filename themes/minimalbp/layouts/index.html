@@ -23,11 +23,22 @@
         <button onclick="myfunctionYellow()" class="theme-btn btn-yellow"></button>
     </div>
             {{ range (.Paginator 20).Pages }}
-            <div class="status-all">
+            {{ $lastmodDateFormatted := .Lastmod.Format "02 Jan 2006 at 15:04" }}
+            {{ $lastmodTimeFormatted := .Lastmod.Format "15:04" }}
+            {{ $date := .Params.date.Format "02.01.2006" }}
+            {{ $lastmod := .Lastmod.Format "02.01.2006" }}
+            <div class="status-all" id="{{ $date }}">
             <p>
+                <div class="head-of-post">
                 <div class="time">
-                    <span class="relativetime" datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}" title="{{ dateFormat "January 2, 2006" .Date }}"><span class="date-only">{{ .Date.Format "02 Jan 2006" }}</span> | <span class="timeam">{{ .Date.Format "15:04" }}</span></span>
+                    <span class="relativetime" datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}" title="{{ dateFormat "January 2, 2006" .Date }}"><span class="date-only">{{ .Date.Format "02 Jan 2006" }}</span> | <span class="timeam">{{ .Params.date.Format "15:04" }}</span></span>
                 </div>
+                <div class="arrow-to-post">
+                    <a href="{{ .Permalink }}" class="go-to-post" >
+                        <i class="fa-solid fa-angles-right"></i>
+                </a>
+            </div>
+            </div>
                 {{ .Content }}
                 {{ if isset .Params "tags" }}
                 <p><span class="mood"></span>
@@ -36,13 +47,20 @@
                         <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span></p>
                 {{ end }}
                 {{ end }}
-                <p id="last-updated2">Updated on <span datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}">{{ .Lastmod.Format "02 Jan 2006 at 15:04" }}</span></p>
+                {{ if ne $lastmod $date }}
+                <div class="last-updated-div">
+                <p id="last-updated2"><i class="fa-regular fa-pen-to-square"></i> <span datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}">{{ $lastmodDateFormatted }}</span></p>
+            </div>
+            {{ else }}
+            <div class="last-updated-div">
+                <p id="last-updated2"><i class="fa-regular fa-pen-to-square"></i> <span datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}">{{ $lastmodTimeFormatted }}</span></p>
+            </div>
+            {{ end }}
             </p>
         </div>
         <br>
         {{ end -}}
     </div>
-
     <div class="new-old-buttons">
     {{ if .Paginator.HasPrev }}
     <a class="btn btn-default newer-statuses" href="{{ .Paginator.Prev.URL }}">

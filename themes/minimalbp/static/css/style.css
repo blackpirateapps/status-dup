@@ -21,6 +21,8 @@
     --accent-clr-hvr: rgb(182, 221, 187);
     --accent-2: rgb(255,214,10);
     --warning-clr: rgb(255,69,58);
+    --grey: grey;
+    --ios-grey-5: rgb(44,44,46);
 }
 @keyframes new-nav-animation {
     0% {
@@ -417,4 +419,14 @@ a[href^="https:"]::after {
     font-size: 0.7rem; 
     text-align: right;
     font-family: sans-serif; 
+    color: var(--grey);
+
+}
+.last-updated-div {
+    display: flex;
+    justify-content: flex-end;
+}
+.head-of-post {
+    display: flex;
+    justify-content: space-between;
 }
