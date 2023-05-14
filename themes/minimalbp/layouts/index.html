@@ -34,7 +34,7 @@
                     <span class="relativetime" datetime="{{ dateFormat "2006-01-02T15:04:05" .Date }}" title="{{ dateFormat "January 2, 2006" .Date }}"><span class="date-only">{{ .Date.Format "02 Jan 2006" }}</span> | <span class="timeam">{{ .Params.date.Format "15:04" }}</span></span>
                 </div>
                 <div class="arrow-to-post">
-                    <a href="{{ .Permalink }}" class="go-to-post" >
+                    <a href="{{ .RelPermalink }}" class="go-to-post" >
                         <i class="fa-solid fa-angles-right"></i>
                 </a>
             </div>

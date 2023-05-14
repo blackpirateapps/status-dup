@@ -430,6 +430,3 @@ a[href^="https:"]::after {
     display: flex;
     justify-content: space-between;
 }
-.go-to-post::after {
-    content: "";
-}
