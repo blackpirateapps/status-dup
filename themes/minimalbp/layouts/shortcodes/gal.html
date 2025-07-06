@@ -1,5 +1,7 @@
+{{ $images := .Inner | transform.Unmarshal }}
+
 <div class="justified-gallery" data-row-height="180" data-margins="5">
-  {{ range .Params }}
+  {{ range $images }}
     <a href="{{ .src }}" {{ with .caption }}title="{{ . }}"{{ end }}>
       <img src="{{ .thumb | default .src }}" alt="{{ .alt | default "Gallery Image" }}">
     </a>
@@ -18,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css">
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
 
-  <!-- Init scripts -->
+  <!-- Init script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       $('.justified-gallery').justifiedGallery({
@@ -28,8 +30,7 @@
       }).on('jg.complete', function () {
         lightGallery(document.querySelector('.justified-gallery'), {
           selector: 'a',
-          download: false,
-          zoom: true
+          download: false
         });
       });
     });
