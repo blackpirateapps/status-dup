@@ -1,38 +1,37 @@
 <div class="justified-gallery" data-row-height="180" data-margins="5">
-      {{ range .Params }}
-          <a href="{{ .src }}" {{ with .caption }}title="{{ . }}"{{ end }}>
-                <img src="{{ .thumb | default .src }}" alt="{{ .alt | default "Gallery Image" }}">
-                    </a>
-                      {{ end }}
-                      </div>
+  {{ range .Params }}
+    <a href="{{ .src }}" {{ with .caption }}title="{{ . }}"{{ end }}>
+      <img src="{{ .thumb | default .src }}" alt="{{ .alt | default "Gallery Image" }}">
+    </a>
+  {{ end }}
+</div>
 
-                      {{ if not (.Page.Scratch.Get "justified-gallery-loaded") }}
-                        {{ .Page.Scratch.Set "justified-gallery-loaded" true }}
+{{ if not (.Page.Scratch.Get "justified-gallery-loaded") }}
+  {{ .Page.Scratch.Set "justified-gallery-loaded" true }}
 
-                          <!-- Justified Gallery CSS/JS -->
-                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
-                              <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-                                <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+  <!-- Justified Gallery CSS/JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 
-                                  <!-- lightGallery CSS/JS -->
-                                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css">
-                                      <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
+  <!-- lightGallery CSS/JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
 
-                                        <!-- Init scripts -->
-                                          <script>
-                                              document.addEventListener("DOMContentLoaded", function () {
-                                                    $('.justified-gallery').justifiedGallery({
-                                                            rowHeight: 180,
-                                                                    margins: 5,
-                                                                            captions: true
-                                                                                  }).on('jg.complete', function () {
-                                                                                          lightGallery(document.querySelector('.justified-gallery'), {
-                                                                                                    selector: 'a',
-                                                                                                              download: false,
-                                                                                                                        zoom: true
-                                                                                                                                });
-                                                                                                                                      });
-                                                                                                                                          });
-                                                                                                                                            </script>
-                                                                                                                                            {{ end }}
-                                                                                                                                            
+  <!-- Init scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      $('.justified-gallery').justifiedGallery({
+        rowHeight: 180,
+        margins: 5,
+        captions: true
+      }).on('jg.complete', function () {
+        lightGallery(document.querySelector('.justified-gallery'), {
+          selector: 'a',
+          download: false,
+          zoom: true
+        });
+      });
+    });
+  </script>
+{{ end }}
