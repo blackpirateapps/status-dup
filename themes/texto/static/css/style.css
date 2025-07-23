@@ -132,4 +132,12 @@ img {
   }
 }
 
+a img {
+  border: none;
+  text-decoration: none;
+}
+#img-link {
+  text-decoration: none;
+  border: none;
+}
 
