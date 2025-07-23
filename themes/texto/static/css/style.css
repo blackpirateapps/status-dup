@@ -1,63 +1,100 @@
-/* Minimal CSS for Text-Only Website */
+/* === Variables === */
 :root {
-  --accent: #007acc; /* single accent color */
-  --text: #1a1a1a;
-  --bg: #ffffff;
-  --font: system-ui, sans-serif;
+  --accent: #007acc;
+  --bg: #fff;
+  --fg: #222;
+  --muted: #555;
+  --border: #ddd;
+  --header-bg: #f9f9f9;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* === Global Reset & Body === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
   line-height: 1.6;
   padding: 2rem;
   max-width: 700px;
   margin: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* === Header & Navigation === */
+nav, .header-container {
+  background: var(--header-bg);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  display: flex; justify-content: center; gap: 1.5rem;
+}
+nav a {
   color: var(--accent);
-  margin-top: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* === Post Entries === */
+.status-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+.status-item:last-child {
+  border: none;
+}
+.status-item time {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.status-item h2, .status-item p, .status-item blockquote {
   margin-bottom: 1rem;
 }
 
-p {
-  margin-bottom: 1rem;
+/* === Accent Headings & Quotes === */
+.status-item h2 {
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+.status-item blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+  background: rgba(0, 122, 204, 0.05);
 }
 
+/* === Footers & Links === */
 a {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid var(--accent);
 }
-
 a:hover {
   opacity: 0.8;
 }
-
-ul, ol {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-code {
-  background: #f4f4f4;
-  padding: 0.2rem 0.4rem;
-  border-radius: 3px;
-  font-family: monospace;
-}
-
-blockquote {
-  border-left: 4px solid var(--accent);
-  padding-left: 1rem;
-  margin: 1rem 0;
-  color: #555;
-  font-style: italic;
+/* === Dark Mode Support === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --fg: #e0e0e0;
+    --muted: #888;
+    --border: #333;
+    --header-bg: #1e1e1e;
+  }
+  nav, .status-item blockquote {
+    background: none;
+  }
 }
