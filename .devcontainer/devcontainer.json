@@ -6,13 +6,3 @@
       "extended": true
     }
   },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "eliostruyf.vscode-front-matter"
-      ]
-    }
-  },
-  "forwardPorts": [1313],
-  "postCreateCommand": "git submodule update --init"
-}
